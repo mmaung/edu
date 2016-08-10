@@ -1,0 +1,16 @@
+variable in Leon RT can generally be accessed with lrt_<var-name>
+variable in Shave can generally be accessed with sx_<var-name>, with x replaced by the shave number
+if the variable name is unique, the prefix might not be necessary as debugger could figure it out
+
+moviDebug 2 document location:
+  tools/doc/moviDebug2
+
+moviDebug2 is used by default, to overwrite include the switch MV_MVDBG_GEN=1 in make debug command
+
+to see memory usage of the project:
+  make report [MV_SOC_REV=ma2450]
+  google-chrome output/report/memviz.html
+
+look up a variable name, address, and current value:
+  mget <var-name>/<address>
+
