@@ -39,3 +39,10 @@ to create tar.gz of a directory:
 to extract .tar.gz:
   tar xvzf <filename>
 
+to know what git branch you are in on the command prompt itself:
+  export PS1="\[\u@\h \w\]$(__git_ps1 "(%s)")\$ "
+
+to set environment variable:
+  export VAR=...
+    in .bashrc last line
+
