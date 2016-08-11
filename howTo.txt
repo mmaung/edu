@@ -5,3 +5,37 @@ Ubuntu 14.04:
   Click on the tab "Corners/Edges"
   Change "Top Edge" from "Maximize" to "None"
 
+Context menu to open terminal from pwd in file browser:
+  apt install nautilus-open-terminal
+  restart computer
+
+To open file browser from pwd in terminal:
+  nautilus .
+
+to see the full path in the file browser:
+  ctrl+L
+
+git commands:
+  git config --global core.editor "vim"
+  git branch -m <new-branch-name>
+  git push --no-thin nod <local-branch-name>:refs/for/master
+  git commit --amend
+  git revert <git-sha-id>
+  git log nod/master
+  git reset --hard HEAD~1  # to remove the latest commit
+
+  git format-patch -1
+  git am --3way <patch-name>
+
+  git checkout -b <branch-name>
+  git checkout -b <branch-name> --track nod/master
+  git pull --rebase
+
+  vim .git/config
+
+to create tar.gz of a directory:
+  tar pczf <filename.tar.gz> <directory-name>
+
+to extract .tar.gz:
+  tar xvzf <filename>
+
