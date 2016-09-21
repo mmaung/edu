@@ -1,0 +1,5 @@
+cmake .. -DCMAKE_BUILD_TYPE=Debug
+
+OSS Recording and Playback:
+https://sites.google.com/a/nod-labs.com/development/howto/how-to-use-openspatialservice-recording-and-playback-functionality
+
