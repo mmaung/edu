@@ -22,9 +22,12 @@ Tried it on Ubuntu 14.04 (9/20/2016):
 2. cd ~/opencv
 3. mkdir build
 4. cd build
-5. cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local ..
+5. cmake -D CMAKE_BUILD_TYPE=RELEASE\DEBUG -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=<path-to-opencv_contrib>/modules ..
 6. make -j8
 7. sudo make install
+at least in Ubuntu 14.04:
+8. sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
+9. sudo ldconfig
 
 Using OpenCV with gcc and CMake:
 see Tutorial1 directory
