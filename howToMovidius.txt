@@ -81,6 +81,16 @@ to debug usb:
 to enable all clock for debugging purpose:
   OsDrvCprStartAllClocks()
     implemented inside common/drivers/myriad2/socDrivers/leon/rtems/src/OsDrvCpr.c
+    
+Certain parts of SIPP do require to run from CMX for HW reasons. These are specially marked in code in separate section defines. These implicitly do not define somewhere specific so they allow the user to redefine them separately in their application Makefile. These defines are marked as "CMX_DATA".
+
+For a standard MDK application, considering that you've already moved the Leon code in DDR, all you'd have to do in order to set the required SIPP parts in CMX is to define these in your applicatiom Makefile, somewhere after the inclusion of generic.mk:
+
+ CCOPT += -D'CMX_DATA=__attribute__((section(".cmx.data")))'
+
+CCOPT_LRT += -D'CMX_DATA=__attribute__((section(".cmx.data")))'
+
+Of course, if your application is slightly different than a standard one, and it is using different linker scripts than the default ones, it would be required to change the section name from .cmx.data to some other cmx section your application has defined. Similarly, if your application has used something different than CCOPT and/or CCOPT_LRT, you'll need to pass these flags via your own build system.
  
   
 

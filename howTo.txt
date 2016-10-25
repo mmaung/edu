@@ -23,6 +23,7 @@ git commands:
   git revert <git-sha-id>
   git log nod/master
   git reset --hard HEAD~1  # to remove the latest commit
+  git log --oneline # show log, one log per commit
 
   git format-patch -1
   git am --3way <patch-name>
@@ -30,6 +31,13 @@ git commands:
   git checkout -b <branch-name>
   git checkout -b <branch-name> --track nod/master
   git pull --rebase
+  
+  git rebase master  # pull & rebase from the master to the current branch
+  
+  git branch -d <branch-name> # delete a local branch if it has been fully merged in
+  git branch -D <branch-name> # delete a local branch forcibly
+  git checkout -b <new-branch-name> [git-sha-id] # create a local branch and [] is optional
+  git cherry-pick <git-sha-id> # cherry pick the <git-sha-id> commit
 
   vim .git/config
 
@@ -45,4 +53,15 @@ to know what git branch you are in on the command prompt itself:
 to set environment variable:
   export VAR=...
     in .bashrc last line
+
+to merge into master, there should be a submit button once +2 for review is obtained. Press on it.
+
+restart udev:
+  sudo udevadm control --reload
+
+usb devices to file assignment under dev dir:
+lsusb to find out Bus <busId> and Device <devId>
+ll /dev/bus/usb/<busId>/<devId> to find out user and group
+udev rule:
+  create a file under /etc/udev/rules.d/
 
